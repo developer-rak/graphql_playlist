@@ -17,6 +17,7 @@ const GET_BOOKS_QUERY = gql`
    query getBooksQuery {
       books{
          name
+         genre
          id
       }
    }
@@ -27,12 +28,12 @@ function BookList() {
    if(loading) return <p>Loading...</p>;
    if(error) return <p>Error: {error.message}</p>;
    
-   return data.books.map(({name, id}) =>(
+   return data.books.map(({name, genre, id}) =>(
      <div key={id}>
        <ul id="book-list">
-         <li>Book Name</li>
-         <li>2{name}</li>
-         <p>{id}</p>
+         <li>Book: {name}</li>
+         <li>Gen: {genre}</li>
+         {/*<li>id: {id}</li>*/}
        </ul>
      </div>
    ));
