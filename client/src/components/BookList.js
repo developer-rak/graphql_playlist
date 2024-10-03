@@ -1,5 +1,6 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import { GET_BOOKS_QUERY } from "../queries/queries";
 // import { graphql } from 'react-apollo';
 
 /*
@@ -12,7 +13,7 @@ const getBooksQuery = gql`
    }
 `
 */
-
+/*
 const GET_BOOKS_QUERY = gql`
    query getBooksQuery {
       books{
@@ -22,6 +23,7 @@ const GET_BOOKS_QUERY = gql`
       }
    }
 `;
+*/
 
 function BookList() {
    const { loading, error, data } = useQuery(GET_BOOKS_QUERY);
