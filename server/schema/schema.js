@@ -13,24 +13,6 @@ const {
    GraphQLNonNull,
 } = graphql;
 
-/*
-// dummy data
-var books = [
-   {name:'Name of the wind', genre:'Fantasy', id:'1', authorId:'1'},
-   {name:'The final empire', genre:'Fantasy', id:'2', authorId:'2'},
-   {name:'The Long Earth', genre:'Sci-fi', id:'3', authorId:'3'},
-   {name:'DataBase', genre:'Adventure', id:'4', authorId:'2'},
-   {name:'Emotions', genre:'Emotion', id:'5', authorId:'3'},
-   {name:'Boy at the tree', genre:'wildLife', id:'6', authorId:'3'}
-];
-
-var authors = [
-   {name:'Patrick Rothfuss', age:44, id: '1'},
-   {name:'Haleem Baghi', age:104, id: '2'},
-   {name:'Terry Practchett', age:66, id: '3'}
-];
-*/
-
 const BookType = new GraphQLObjectType({
    name:'Book',
    fields: () => ({
@@ -57,7 +39,7 @@ const AuthorType = new GraphQLObjectType({
          type: new GraphQLList(BookType),
          resolve(parent, args) {
             // return _.filter(books, {authorId: parent.id});
-            return Book.findById({ authorId:parent.id });
+            return Book.find({ authorId:parent.id });
          } 
       }
    })
