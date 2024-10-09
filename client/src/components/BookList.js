@@ -12,12 +12,11 @@ function BookList() {
    
    return (
      <div>
-         {data.books.map((book)=> (
-            <ul id="book-list" key={book.id}>
-               <li onClick={() => setSelected(book.id)}>Book: {book.name}</li>
-               {/*<li>Gen: {genre}</li>*/}
-            </ul>
-         ))}
+         <ul id="book-list">
+            {data.books.map((book)=> (
+               <li onClick={() => setSelected(book.id)}>{book.name}</li>
+            ))}
+         </ul>
          {selected 
             ? <BookDetails bookId={selected}/> 
             : <div>No Book Selected</div>

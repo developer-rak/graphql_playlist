@@ -49,14 +49,6 @@ function AddBook() {
             <select onChange={e=>setAuthorId(e.target.value)} >
                <option>Select Author</option>
                {displayAuthors()}
-
-
-               {/*{data && <p>Book Added: {data.addBook.name}</p>}*/}
-               {/*
-               {data.authors.map(author => {
-                  return <option key={author.id} value={author.id}>{author.name}</option>
-               })}
-               */}
             </select>
          </div>
 
